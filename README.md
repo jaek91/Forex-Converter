@@ -4,6 +4,7 @@
 
 - This app is an simple foreign currency converter which uses the forex-python API to convert between various foreign currencies and display the results
   - Note: Not all world currencies are supported by the API so in those cases, an error message of "Invalid Country Code: " will show.
+  - I've used Bootstrap CSS for styling some components
 
 ## Steps to run the Forex Converter on a local device
 
