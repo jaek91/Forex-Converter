@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forex Currency Converter</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+
+<body>
+
+<section class ="error-msgs">
+
+{% if errors %}
+{% for error in errors %}
+    {% if error[id] == id_to_find %}
+        <p class="errors">
+            {{error["msg"]}}
+        </p>
+    {% endif %}
+{% endfor %}
+{% endif %}
+</section>
+
+<h1>Welcome to Forex Conversion!</h1> 
+
+<form action="/form-check" class="form-horizontal" id ="forex-form" method = "POST">
+
+<div class="form-group">
+    <label for="conv-from">Converting From:</label>
+    <input class="form-control" type="text" name="currency-from" id="curr-from" placeholder="Insert 3 letter country currency (e.g. USD)" required> 
+</div>
+
+<div class="form-group">
+    <label for="conv-to">Converting To:</label>
+    <input class="form-control" type="text" name="currency-to" id="curr-to" placeholder="Insert 3 letter country currency (e.g. USD)" required>    
+</div>
+
+<div class="form-group">
+    <label for="amount">Amount:</label>
+    <input class="form-control" type="text" name="amount" id="conv-amt" placeholder="Insert a numerical value with no currency symbols" required> 
+</div>
+
+<button class="btn btn-primary" id="submit">Convert!</button>
+
+<p class="form-group conv-result">
+    {{conv_result}}
+</p>
+
+</form>
+
+<!-- <p class="conv-result">
+    {{conv_result}}
+</p> -->
+
+
+</body>
+</html>
